@@ -16,7 +16,7 @@ app.engine('.hbs', engine({
     extname: '.hbs',
     helpers: require('./lib/handlebars')
 }));
-app.set('view engine', 'hbs');
+app.set('view engine', '.hbs');
 
 // Midlewares
 app.use(morgan('dev'));
