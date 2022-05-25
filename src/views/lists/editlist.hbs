@@ -1,0 +1,54 @@
+<form action="/lists/editlist/{{id}}" method="POST">
+
+    <div class="container p-4">
+        <div class="date_savedata">
+            <h2>{{todate date}}</h2>
+            <h2>ID: {{id}}</h2>
+            <div class="my-auto d-grid gap-2">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Save data</button>
+            </div>
+        </div>
+        
+        <table class="table table-striped table-dark align-middle text-center" style="width:100%">
+            <thead>
+                <tr>
+                    <th scope="col">Local</th>
+                    <th scope="col">Nº Box</th>
+                    <th scope="col">Quantity of boxes</th>
+                    <th scope="col">Transaction</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each listElement }}
+                <tr>
+                    <th class="p-4" scope="row" style="width:10%" name="local">{{local}}<br> {{nombre}}</th>
+                    <td style="width:15%">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Box:</span>
+                            <input type="number" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1" name='box'>
+                        </div>
+                    </td>
+
+                    <td style="width:15%">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Qty:</span>
+                            <input type="number" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1" name="qty_boxes">
+                        </div>
+                    </td>
+                    <td style="width:60%">
+                        <div class="input-group">
+
+                            <textarea class="form-control" aria-label="With textarea" name="operations"></textarea>
+                        </div>
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</form>

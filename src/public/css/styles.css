@@ -1,7 +1,10 @@
 body{
     background: #f5f6f5;
     font-family: 'Oswald', sans-serif;
-    overflow: hidden;
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .index{
@@ -26,6 +29,13 @@ body{
     font-size: 4rem;
     margin: 0;
     padding: 0;
+}
+
+.date_savedata{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
 }
 
 @media(min-width: 992px){
