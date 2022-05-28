@@ -20,14 +20,14 @@
             </thead>
             <tbody>
 
-                {{#each listElement }}
+                {{#each data}}
                 <tr>
                     <th class="p-4" scope="row" style="width:10%" name="local">{{local}}<br> {{nombre}}</th>
                     <td style="width:15%">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Box:</span>
                             <input type="number" class="form-control" aria-label="Username"
-                                aria-describedby="basic-addon1" name='box'>
+                                aria-describedby="basic-addon1" name='box' value="{{box}}">
                         </div>
                     </td>
 
@@ -35,13 +35,13 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Qty:</span>
                             <input type="number" class="form-control" aria-label="Username"
-                                aria-describedby="basic-addon1" name="qty_boxes">
+                                aria-describedby="basic-addon1" name="qty_boxes" value="{{qty_boxes}}">
                         </div>
                     </td>
                     <td style="width:60%">
                         <div class="input-group">
 
-                            <textarea class="form-control" aria-label="With textarea" name="operations"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="operations">{{operations}}</textarea>
                         </div>
                     </td>
                 </tr>
