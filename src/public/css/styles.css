@@ -38,6 +38,33 @@ body{
 
 }
 
+.confirm-box{
+    display: none;
+    position: fixed;
+    top: 0;
+    padding-top: 30vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.232);
+}
+
+.adlist_form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.adlist_form div{
+    width: 250px;
+    padding: 10px;
+}
+
+.selector_section{
+    padding: 30px;
+    display: flex;
+    justify-content:space-evenly;
+    text-align: center;
+}
 @media(min-width: 992px){
     .masthead h1{
         font-size: 5.5rem;

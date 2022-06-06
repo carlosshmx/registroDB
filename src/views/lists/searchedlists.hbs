@@ -1,18 +1,20 @@
 <div class="container p-4">
     <div class="row">
-        {{#each listElement}}
-        <div class="col-md-3 p-1">
+        <p class="text-center">Results based on your search:</p>
+        {{#each data}}
+        <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
-                    <a href="/lists/editlist/{{id}}">
-                        <h3 class="card-title text-uppercase" id={{id}}>
+                    <a href="/lists/editlist/{{id_date}}">
+                        <h3 class="card-title text-uppercase">
                             {{todate date}}
                         </h3>
                     </a>
-                    <h4 class="m-2">ID: {{id}}</h4>
+                    <h4 class="m-2">ID: {{id_date}}</h4>
+                    <p>Local {{local}}: {{nombre}}</p>
                     {{!-- <a href="/lists/deletelist/{{id}}" class="btn btn-danger">Delete</a> --}}
-                    <a class="btn btn-danger" onclick="displaybox({{id}})">Delete</a>
-                    <a href="/lists/editlist/{{id}}" class="btn btn-secondary">Edit</a>
+                    <a class="btn btn-danger" onclick="displaybox({{id_date}})">Delete</a>
+                    <a href="/lists/editlist/{{id_date}}" class="btn btn-secondary">Edit</a>
                 </div>
             </div>
         </div>
@@ -21,8 +23,9 @@
         {{else}}
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
-                <p>There are not transactions saved yet</p>
-                <a href="/lists/addlist">Create One!</a>
+                <p>Not found</p>
+                <a href="/lists/addlist">Create it!</a>
+                <a href="/lists">Go back</a>
             </div>
         </div>
         {{/each}}

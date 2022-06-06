@@ -8,3 +8,10 @@ router.get('/', (req, res)=>{
 });
 
 module.exports = router;
+
+const pool = require('../database');
+
+function inicial(){
+    let marca = document.getElementById('marca_selector')
+    marca.innerHTML = "<div></div>"
+}

@@ -1,13 +1,13 @@
-<form action="/lists/addlist" method="POST" class="container p-4 d-flex flex-row align-middle" style="width:100%">
-        <div style="width:30%" class="my-auto">
+<form action="/lists/addlist" method="POST" class="container p-4 align-middle adlist_form">
+        <div class="my-auto text-center adlist_form_element">
             <h3 class="mx-4">Transaction Tracking</h3>
         </div>
-        <div class="input-group m-3" style="width:20%">
+        <div class="input-group my-auto adlist_form_element">
             <span class="input-group-text" id="basic-addon1">Date</span>
             <input type="date" class="form-control" name="date" aria-describedby="basic-addon1">
         </div>
 
-        <div class="input-group m-3" style="width:30%">
+        <div class="input-group my-auto adlist_form_element">
             <label class="input-group-text" for="inputGroupSelect01">Operator</label>
             <select class="form-select" name="operator">
                 <option selected>Choose...</option>
@@ -16,7 +16,7 @@
                 <option value="Brian Tuduri">Brian Tuduri</option>
             </select>
         </div>
-        <div class="my-auto d-grid gap-2" style="width:20%">
+        <div class="my-auto d-grid adlist_form_element">
             <button type="submit" class="btn btn-success btn-lg btn-block">Create</button>
         </div>
 

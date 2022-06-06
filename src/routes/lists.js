@@ -12,8 +12,6 @@ const locales = [1, 101, 103, 106, 107, 113, 203, 206, 211, 212, 215, 216, 301];
 router.get('/', isLoggedIn, async(req, res)=>{
     const listElement = await pool.query('SELECT * FROM dates')
     res.render('lists/list',{listElement} )
-    // const links = await pool.query('SELECT * FROM links WHERE user_id = ?', [req.user.id])
-    // res.render('links/list', { links });
 });
 
 router.get('/addlist', async(req, res) =>{
@@ -105,5 +103,25 @@ router.post('/editlist/:id', async (req, res) => {
     res.render('lists/list',{listElement})
 
 });
+
+router.get('/deletelist/:id', async(req, res) =>{
+    const{id}= req.params;
+    await pool.query(`DELETE FROM operations WHERE id_date = ${id}`);
+    await pool.query(`DELETE FROM dates WHERE id = ${id}`);
+    res.redirect(`/lists`);
+});
+
+router.get('/searchedlist/:value', async(req, res)=>{
+    const{value}= req.params;
+    console.log(value)
+    const data = await pool.query(`SELECT * FROM operations INNER JOIN locales ON operations.local = locales.local WHERE operations LIKE '%${value}%'`)
+    res.render('lists/searchedlists',{data} )
+});
+
+router.get('/searchedlist/', async(req, res)=>{
+    res.redirect("/lists")
+});
+
+
 
 module.exports = router;

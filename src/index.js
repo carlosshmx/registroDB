@@ -53,6 +53,7 @@ app.use(require('./routes/index'));
 app.use(require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
 app.use('/lists', require('./routes/lists'));
+app.use('/contactlens', require('./routes/contactlens'));
 
 
 
