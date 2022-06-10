@@ -6,7 +6,7 @@ const router = express.Router();
 const pool = require('../database');
 const {isLoggedIn} = require('../lib/auth');
 
-const locales = [1, 101, 103, 106, 107, 113, 203, 206, 211, 212, 215, 216, 301];
+const locales = [1, 101, 103, 106, 107, 113, 203, 206, 211, 212, 215, 250, 301, 251];
 
 
 router.get('/', isLoggedIn, async(req, res)=>{
@@ -55,7 +55,7 @@ router.post('/addlist', async(req, res) =>{
             }
 
 
-            // res.render(`/lists/editlist`,{listElement, id, date} )
+            
             res.redirect(`/lists/editlist/${id}`);
         }
         
@@ -67,6 +67,7 @@ router.get('/editlist/:id', async(req, res) =>{
     const timestamp = await pool.query(`SELECT date FROM dates WHERE id = ${id}`);
     const data = await pool.query(`SELECT * FROM operations INNER JOIN locales ON operations.local = locales.local WHERE id_date = ${id}`)
     let date = timestamp[0].date;
+    
     res.render('lists/editlist',{data, id, date} )
 });
 
@@ -100,7 +101,8 @@ router.post('/editlist/:id', async (req, res) => {
     
     // req.flash('success', 'Link updated successfuly');
     const listElement = await pool.query('SELECT * FROM dates')
-    res.render('lists/list',{listElement})
+    req.flash('success', 'Link updated successfuly');
+    res.redirect(`/lists`)
 
 });
 
