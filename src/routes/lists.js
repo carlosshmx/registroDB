@@ -10,7 +10,7 @@ const locales = [1, 101, 103, 106, 107, 113, 203, 206, 211, 212, 215, 250, 301, 
 
 
 router.get('/', isLoggedIn, async(req, res)=>{
-    const listElement = await pool.query('SELECT * FROM dates')
+    const listElement = await pool.query('SELECT * FROM dates ORDER BY date DESC')
     res.render('lists/list',{listElement} )
 });
 

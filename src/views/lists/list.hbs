@@ -1,18 +1,20 @@
 <div class="container p-4">
-    <div class="row">
+    <div >
         {{#each listElement}}
-        <div class="col-md-3 p-1">
+        <div class="p-1">
             <div class="card text-center">
-                <div class="card-body">
+                <div class="list-date">
                     <a href="/lists/editlist/{{id}}">
                         <h3 class="card-title text-uppercase" id={{id}}>
                             {{todate date}}
                         </h3>
                     </a>
                     <h4 class="m-2">ID: {{id}}</h4>
-                    {{!-- <a href="/lists/deletelist/{{id}}" class="btn btn-danger">Delete</a> --}}
-                    <a class="btn btn-danger" onclick="displaybox({{id}})">Delete</a>
-                    <a href="/lists/editlist/{{id}}" class="btn btn-secondary">Edit</a>
+                    <div class="list-buttons">
+                        <a class="btn btn-danger" onclick="displaybox({{id}})">Delete</a>
+                        <a href="/lists/editlist/{{id}}" class="btn btn-secondary">Edit</a>
+                    </div>
+                    
                 </div>
             </div>
         </div>
